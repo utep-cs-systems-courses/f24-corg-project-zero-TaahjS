@@ -64,12 +64,18 @@ void print_arrow(int leftCol, int size){
     ++row;
 
   }
+  if (width % 2 == 0){
+    --row;
+  }
   while(row > 0){
 
     for(int placer = leftCol; placer > 0; --placer){
 
       putchar(' ');
 
+    }
+    if (width % 2 == 0){
+      --width;
     }
 
     for(int placer = (int) width/2; placer > 0; --placer){
