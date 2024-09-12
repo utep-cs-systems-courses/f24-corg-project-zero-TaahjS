@@ -27,9 +27,9 @@ void print_triangle(int leftCol, int size)
 }
 
 void print_arrow(int leftCol, int size){
-  int row = 0;
+  int row = 0; 
 
-  int width = size;
+  int width = size; //this copies size for the base of the arrow
 
   while (size > -1){//constructs tip of arrow
 
@@ -39,19 +39,19 @@ void print_arrow(int leftCol, int size){
 
     }
 
-    for(int placer = (int) size/2; placer > 0; --placer){
+    for(int placer = (int) size/2; placer > 0; --placer){ //places spaces to center the *
 
       putchar(' ');
 
     }
 
-    if (size % 2 != 0){
+    if (size % 2 != 0){ //if size is even, then the tip of the arrow is 1 * bigger
 
-      putchar('*');
+      putchar('*'); 
 
     }
 
-    for(int placer = row * 2; placer > 0; --placer){
+    for(int placer = row * 2; placer > 0; --placer){ //every row increases in size by 2 *
 
       putchar('*');
 
@@ -64,26 +64,31 @@ void print_arrow(int leftCol, int size){
     ++row;
 
   }
-  if (width % 2 == 0){
-    --row;
+  if (width % 2 == 0){ //even-sized arrows have their first row be empty, so decrease row counter
+    --row; 
   }
-  while(row > 0){
+  while(row > 0){ //this builds the base of the arrow that is the same height as the tip
 
-    for(int placer = leftCol; placer > 0; --placer){
+    for(int placer = leftCol; placer > 0; --placer){ //leftCol setter
+
+      putchar(' ');
+
+    }
+    int placer;
+    if (width % 2 == 0){
+      placer = (int) (width - 1)/2;
+    }else{
+      placer = (int) (width)/2;
+    }
+
+    for(placer = placer; placer > 0; --placer){
 
       putchar(' ');
 
     }
     if (width % 2 == 0){
-      --width;
+      putchar('*');
     }
-
-    for(int placer = (int) width/2; placer > 0; --placer){
-
-      putchar(' ');
-
-    }
-
     putchar('*');
 
     putchar('\n');
