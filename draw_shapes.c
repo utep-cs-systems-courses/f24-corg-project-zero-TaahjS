@@ -26,3 +26,63 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+void print_arrow(int leftCol, int size){
+  int row = 0;
+
+  int width = size;
+
+  while (size > -1){//constructs tip of arrow
+
+    for(int placer = leftCol; placer > 0; --placer){ //sets leftCol
+
+      putchar(' ');
+
+    }
+
+    for(int placer = (int) size/2; placer > 0; --placer){
+
+      putchar(' ');
+
+    }
+
+    if (size % 2 != 0){
+
+      putchar('*');
+
+    }
+
+    for(int placer = row * 2; placer > 0; --placer){
+
+      putchar('*');
+
+    }
+
+    putchar('\n');
+
+    size = size - 2;
+
+    ++row;
+
+  }
+  while(row > 0){
+
+    for(int placer = leftCol; placer > 0; --placer){
+
+      putchar(' ');
+
+    }
+
+    for(int placer = (int) width/2; placer > 0; --placer){
+
+      putchar(' ');
+
+    }
+
+    putchar('*');
+
+    putchar('\n');
+
+    --row;
+
+  }
+}
