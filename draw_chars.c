@@ -20,7 +20,7 @@ void print_char_8x12(char c){
   for (char col = 0; col < 8; col++){
     for (char row = 0; row < 12; row++){
       unsigned short rowBits = font_8x12[c][col];
-      unsigned short colMask = 1 << (9-row);
+      unsigned short colMask = 1 << (11-row);
       putchar((rowBits & colMask) ? '*' : ' ');
     }
     putchar('\n');
