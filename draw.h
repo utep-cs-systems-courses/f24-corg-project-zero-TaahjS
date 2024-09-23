@@ -10,6 +10,6 @@ void print_arrow(int startCol, int size);
 
 extern const unsigned char font_5x7[][5];
 extern const unsigned char font_8x12[][12];
-extern const unsigned char font_11x16[][11];
+extern const unsigned char font_11x16[][16];
 
 #endif
